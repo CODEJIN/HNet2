@@ -58,6 +58,9 @@ def Connect(hNet, window_Dict, ui):
 
     #This should be at last.
     Shortcut_Assign(hNet, ui);
+
+    ui.tesnor_Tab_Widget.setCurrentIndex(0)
+    ui.status_TabWidget.setCurrentIndex(0)
     
 def Process_Assign(hNet, ui):
     global network_Graph_Canvas;

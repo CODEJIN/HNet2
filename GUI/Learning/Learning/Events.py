@@ -19,6 +19,7 @@ def Connect(hNet, window_Dict, ui):
     ui.info_TabWidget.currentChanged.connect(lambda: Info_Tab_Index_Changed_Event(hNet, ui));
     ui.next_PushButton.clicked.connect(lambda: Next_Button_Event(hNet, window_Dict, ui));
 
+    ui.info_TabWidget.setCurrentIndex(0)
 
 def Learning_Flow_Assign(hNet, ui):
     ui.name_LineEdit.setValidator(RegEx.Letter);

@@ -18,6 +18,7 @@ def Connect(hNet, window_Dict, ui):
     ui.start_PushButton.clicked.connect(lambda: Start_Button_Event(hNet, ui));
     ui.checkpoint_Save_PushButton.clicked.connect(lambda: Checkpoint_Save_Button_Event(hNet));
 
+    ui.info_TabWidget.setCurrentIndex(0)
 
 def Update(hNet, ui):
     for index in range(ui.loss_Flow_Layout.count()):
