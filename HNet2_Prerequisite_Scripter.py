@@ -69,8 +69,9 @@ def Generate_Script_Process(process_Name_List, graph_History):
             for key, value in parameter_Dict.items():
                 if key == 'tensor_Func':
                     value = 'tf.{}'.format(value._tf_api_names[0]) if hasattr(value, '_tf_api_names') else '{}.{}'.format(value.__module__, value.__name__);
-                    #Some functions like 'softmax' do not decorated yet in tensorflow code. The following line is temporal bug fix.
+                    #Some functions like 'softmax' or 'expand_dims' do not decorated yet in tensorflow code. The following line is temporal bug fix.
                     value = value.replace('tensorflow.python.ops.nn_ops.', 'tf.nn.');
+                    value = value.replace('tensorflow.python.ops.array_ops.', 'tf.');
                 elif type(value) == tf.DType:
                     value = 'tf.{}'.format(value.name);
                 elif type(value) == str:
